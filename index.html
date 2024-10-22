@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedant Bende - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Vedant Bende</div>
+            <ul class="sidebar">
+                <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="https://github.com/VedantBende?tab=repositories" target="_blank">Projects</a></li>
+                <li><a href="certificates.html">Certifications</a></li>
+                <li><a href="https://www.linkedin.com/in/vedant-bende-3aa28b2a8" target="_blank">LinkedIn</a></li>
+                <li><a href="mailto:vedantbende2121@gmail.com" target="_blank">Contact</a></li>
+                <li><a href="Vedant Bende Resume.pdf" download>Resume</a></li>
+            </ul>
+            <ul class="mainbar">
+                <li class="hideOnTab"><a href="#home">Home</a></li>
+                <li class="hideOnTab"><a href="#about">About</a></li>
+                <li class="hideOnTab"><a href="#skills">Skills</a></li>
+                <li class="hideOnTab"><a href="#experience">Experience</a></li>
+                <li class="hideOnTab"><a href="https://github.com/VedantBende?tab=repositories" target="_blank">Projects</a></li>
+                <li class="hideOnTab"><a href="certificates.html">Certifications</a></li>
+                <li class="hideOnTab"><a href="https://www.linkedin.com/in/vedant-bende-3aa28b2a8" target="_blank">LinkedIn</a></li>
+                <li class="hideOnTab"><a href="mailto:vedantbende2121@gmail.com" target="_blank">Contact</a></li>
+                <li class="hideOnTab"><a href="Vedant Bende Resume.pdf" download>Resume</a></li>
+                <li class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="full-screen gradient-overlay">
+            <video autoplay muted loop preload="auto" playsinline class="background-video">
+                <source src="bg_video_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="content">
+                <h1>Vedant Bende</h1>
+                <p>Aspiring UX Designer & Full-Stack Developer</p>
+                <a href="#about" class="button">Learn More</a>
+            </div>
+        </section>
+        
+
+        <section id="about" class="section_about">
+            <div class="container">
+                <h2>About Me</h2>
+                <br>
+                <p>I'm a Computer Science student pursuing my B.Tech with a CGPA of 7+, driven by my passion for web development and user experience design.<br>I enjoy blending creativity with technology to craft meaningful, user-friendly applications.<br>
+                    <br>
+                    My skill set includes web technologies such as HTML, CSS, JavaScript, and React.js,<br>along with design tools like Figma and Adobe XD. I also have a foundational understanding of Python and AI concepts.<br>
+                    <br>
+                    Beyond technical skills, I excel in communication and collaboration, which I believe are essential for success in the tech industry.<br>I'm always eager to learn new technologies and bring innovative ideas to life.</p>
+            </div>
+        </section>
+
+        <section id="skills" class="section_skills">
+            <div class="container">
+                <h2>Technical Skills</h2>
+                <br>
+                <div class="skills-list">
+                    <div class="skill-item"><strong>Web Dev</strong></div>
+                    <div class="skill-item">HTML, CSS, JavaScript, React.js, Node.js, MySQL, GitHub, Google Cloud</div>
+                    <br>
+                    <div class="skill-item"><strong>UX Design</strong></div>
+                    <div class="skill-item">Wireframing & Prototyping, Figma, Adobe XD, Responsive Design,<br>Typography & Color Theory, User-Centered Design (UCD)</div>
+                    <br>
+                    <div class="skill-item"><strong>AI Ops</strong></div>
+                    <div class="skill-item">Prompt Engineering, Contextual Awareness,<br>Iteration & Experimentation, Evaluation & Feedback</div>
+                    <br>
+                    <div class="skill-item"><strong>Basics of Python</strong></div>
+                    <div class="skill-item">Introduction to Python, Basic Syntax, Data Types, Variables,<br>Operators, Control Structures, Functions, Data Structures,<br>Modules & Libraries, File Handling, Error Handling, Basic OOPs</div>
+                    <br>
+                    <h2>Soft Skills</h2>
+                    <br>
+                    <div class="skill-item"><strong>Interpersonal Skills</strong></div>
+                    <div class="skill-item">Communication Skill, Presentation Skill,<br>Group Discussion Skills, Interview Skills, Business Etiquette,<br>Effective Email Writing, Telephone Etiquette</div>
+                    <br>
+                    <div class="skill-item"><strong>Career Development</strong></div>
+                    <div class="skill-item">Career Guidance Framework, Resume Writing</div>
+                    <br>
+                    <div class="skill-item"><strong>Foundational Knowledge</strong></div>
+                    <div class="skill-item">Accounting Fundamentals, IT Foundational Skills,<br>Overview of Artificial Intelligence</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section_experience">
+            <div class="container">
+                <h2>Experience</h2>
+                <br>
+                <h3>J.P. Morgan Software Engineer Job Simulation</h3>
+                <p>A virtual internship experience where I worked on software engineering tasks.</p>
+                <br>
+                <h3>Campus Ambassador Intern, International Model United Nations</h3>
+                <p>Involved in social media marketing and outreach initiatives to promote events.</p>
+            </div>
+        </section>
+
+        <!-- Additional sections can be added similarly -->
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Vedant Bende. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
