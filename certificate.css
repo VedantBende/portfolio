@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background Video Styles */
+.background-video {
+    position: fixed; /* Fixed position for the background */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover the entire area */
+    z-index: -1; /* Send the video behind the content */
+}
+
+/* Basic styling */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background-color: #f0f0f0;
+    scroll-behavior: smooth;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; /* Control the speed of the fade */
+}
+
+body.fade-out {
+    opacity: 0; /* Fade out effect */
+}
+
+/* Container for the certificates */
+.certificate {
+    display: flex;
+    gap: 10px;
+    width: 90%;
+    max-width: 1200px;
+    height: 400px;
+    margin: auto;
+}
+
+/* Styling for each card */
+.card {
+    flex: 1;
+    height: 100%;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(225, 225, 225, 0.1);
+    cursor: pointer;
+    transition: flex 0.5s ease;
+    display: flex;
+    align-items: flex-end;
+    backdrop-filter: blur(10px); /* Initial blur for the whole card */
+}
+
+/* Card hover effect to expand */
+.card:hover {
+    flex: 5;
+    width: 100%;
+}
+
+/* Background image styling */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    filter: blur(20px); /* Strong blur initially */
+    opacity: 0; /* Fully transparent initially */
+    transition: filter 0.5s ease, opacity 0.5s ease; /* Smooth transition */
+    z-index: 0;
+    border-radius: 20px;
+}
+
+/* Ensure the image fits within the card without cropping */
+.background:only-child {
+    width: 100%;
+    height: auto;
+}
+
+/* Fade effect when card is hovered */
+.card:hover .background {
+    filter: blur(0px);
+    opacity: 1;
+}
+
+/* Styling for card content */
+.card-content {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    transition: opacity 0.5s ease;
+    opacity: 1; /* Visible initially */
+}
+
+/* Center the text in the middle of the card */
+.card-content h3 {
+    font-size: 2em;
+    margin: 0;
+}
+
+/* On hover, fade out the text */
+.card:hover .card-content {
+    opacity: 0; /* Hide content on hover */
+}
+
+/* Title styling */
+.title {
+    font-size: 1.5em;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Show title on hover */
+.card:hover .title {
+    opacity: 1;
+}
+
+/* Backdrop styling */
+.backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    z-index: 1;
+    backdrop-filter: blur(5px); /* Ensure backdrop also blurs with content */
+}
+
+.card:hover .backdrop {
+    backdrop-filter: blur(0px); /* Remove the blur on hover */
+    background-color: transparent;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Adjust card layout for tablets and mobile devices */
+    .certificate {
+        flex-direction: column; /* Stack cards vertically on small screens */
+        width: 400px;
+        height: 500px;
+    }
+
+    .card {
+        height: 250px; /* Reduce height for smaller screens */
+    }
+
+    .card-content h3 {
+        font-size: 1.5em; /* Smaller title size */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for mobile devices */
+    .card {
+        height: 200px; /* Even smaller height for mobile */
+    }
+
+    .card-content h3 {
+        font-size: 1.3em; /* Smaller title size */
+    }
+    .certificate{
+        padding-top: 50px;
+        width: 350px;
+        height: 600px;
+    }
+    body{
+        height: 80vh;
+    }
+}
