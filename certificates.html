@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications</title>
+    <link rel="stylesheet" href="certificate.css">
+</head>
+<body>
+    <video autoplay muted loop preload="auto" playsinline class="background-video">
+        <source src="bg_video_2.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <div class="certificate">
+        <div class="card">
+            <img class="background" src="j p morgan certificate.jpg">
+            <div class="card-content">
+                <h3 class="title">J.P.<br>Morgan</h3>
+            </div>
+            <div class="backdrop"></div>
+        </div>
+        <div class="card">
+            <img class="background" src="google ai certificate.jpg">
+            <div class="card-content">
+                <h3 class="title">Google</h3>
+            </div>
+            <div class="backdrop"></div>
+        </div>
+        <div class="card">
+            <img class="background" src="python certificate.jpg">
+            <div class="card-content">
+                <h3 class="title">Infosys</h3>
+            </div>
+            <div class="backdrop"></div>
+        </div>
+        <div class="card">
+            <img class="background" src="tcs certificate.jpg">
+            <div class="card-content">
+                <h3 class="title">TCS</h3>
+            </div>
+            <div class="backdrop"></div>
+        </div>
+        <div class="card">
+            <img class="background" src="computer certificate.jpg">
+            <div class="card-content">
+                <h3 class="title">IIT<br>Kharagpur</h3>
+            </div>
+            <div class="backdrop"></div>
+        </div>
+        <div class="card">
+            <img class="background" src="certifiactes/mun certificate.jpg">
+            <div class="card-content">
+                <h3 class="title">IMUN</h3>
+            </div>
+            <div class="backdrop"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Add event listeners to all links on the page
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(event) {
+                const href = this.getAttribute('href');
+    
+                // Only apply transition if link is internal (not an external URL or mailto)
+                if (!href.startsWith('mailto:') && !href.endsWith('.pdf')) {
+                    event.preventDefault(); // Prevent the default link behavior
+                    document.body.classList.add('fade-out'); // Add fade-out class to body
+    
+                    // Wait for the transition to complete before navigating
+                    setTimeout(() => {
+                        window.location.href = href; // Navigate to the new page
+                    }, 500); // Delay matches the CSS transition duration (0.5s)
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
