@@ -1,0 +1,499 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background-color: #f0f0f0;
+    scroll-behavior: smooth;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; /* Control the speed of the fade */
+}
+
+.gradient-overlay h1 {
+    font-size: 100px;
+}
+
+/* Header and navigation styling */
+header {
+    background: transparent;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Media Query to Disable Header Backdrop-Filter and Enable Sidebar Backdrop-Filter */
+@media (max-width: 1150px) {
+    header {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        position: absolute;
+    }
+
+    .sidebar {
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #6c63ff;
+}
+
+.sidebar{
+    position: fixed;
+    padding-top: 10px;
+    gap: 30px;
+    font-size: 23px;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li{
+    width: 100%;
+}
+
+.sidebar a{
+    width: 100%;
+
+}
+
+.menu-button {
+    display: none; /* Keep this if you only want it visible on mobile */
+    position: absolute; /* Ensure it can be positioned */
+    right: 15px; /* Change this value to move it right */
+    top: 10px; /* Adjust this value as needed */
+}
+
+.menu-button{
+    display: none;
+}
+@media(max-width: 1150px){
+    .hideOnTab{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+    }
+}
+
+@media(max-width: 400px){
+    .sidebar{
+        width: 100%;
+    }
+}
+
+/* Smooth scrolling effect */
+html {
+    scroll-behavior: smooth;
+}
+
+.gradient-overlay {
+    position: relative;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Prevents video overflow */
+}
+
+/* Styling for the background video */
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire section */
+    transform: translate(-50%, -50%);
+    z-index: 0; /* Keeps the video behind the content */
+}
+
+/* Ensuring content stays above the video */
+.gradient-overlay .content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Show the gradient on hover */
+.gradient-overlay:hover::before {
+    opacity: 1; /* Make gradient fully visible on hover */
+}
+
+.section_about,
+.section_skills,
+.section_experience {
+    margin: 0;
+    padding: 0; /* Set padding to 0 for a more seamless look */
+}
+
+.section_skills {
+    position: relative; /* Make the section a positioning context */
+    background: linear-gradient(135deg, #1a1a40, #2a2a72, #3b3b8f, #472583, #7e1f7b);
+    background-size: 200% 200%;
+    animation: galaxyGradient 10s ease infinite;
+    color: #fff;
+    padding: 80px 20px;
+    overflow: hidden; /* Hide any overflowing stars */
+}
+
+/* Pseudo-element for star effect */
+.section_skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: none; /* Ensure stars don't interfere with content interaction */
+    z-index: 1;
+    background-image: 
+        radial-gradient(1px 1px at 10% 20%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 30% 40%, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 50% 60%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 70% 80%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 90% 10%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 80% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 60% 50%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 20% 70%, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 40% 90%, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 25% 50%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 55% 75%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 75% 20%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 85% 40%, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 65% 60%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 70%);
+    animation: twinkle 4s infinite alternate;
+}
+
+/* Animation for moving gradient */
+@keyframes galaxyGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animation for twinkling effect */
+@keyframes twinkle {
+    0% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(1.2); }
+    100% { opacity: 0.8; transform: scale(1); }
+}
+
+
+/* About section styling */
+.section_about {
+    position: relative; /* Make the section a positioning context */
+    background: linear-gradient(-135deg, #1a1a40, #2a2a72, #3b3b8f, #472583, #7e1f7b);
+    background-size: 200% 200%;
+    animation: galaxyGradient 10s ease infinite;
+    color: #fff;
+    padding: 80px 20px;
+    overflow: hidden; /* Hide any overflowing stars */
+}
+
+.section_about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: none; /* Ensure stars don't interfere with content interaction */
+    z-index: 1;
+    background-image: 
+        radial-gradient(1px 1px at 10% 20%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 30% 40%, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 50% 60%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 70% 80%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 90% 10%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 80% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 60% 50%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 20% 70%, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 40% 90%, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 25% 50%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 55% 75%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 75% 20%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 85% 40%, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 65% 60%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 70%);
+    animation: twinkle 4s infinite alternate;
+}
+
+@keyframes galaxyGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(1.2); }
+    100% { opacity: 0.8; transform: scale(1); }
+}
+
+/* About content layout */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* About text styling */
+.about-text {
+    flex: 1;
+    animation: fadeInLeft 1.5s ease;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-text, .about-image {
+        flex: unset;
+        width: 100%;
+    }
+}
+
+.section_experience {
+    position: relative; /* Make the section a positioning context */
+    background: linear-gradient(-135deg, #1a1a40, #2a2a72, #3b3b8f, #472583, #7e1f7b);
+    background-size: 200% 200%;
+    animation: galaxyGradient 10s ease infinite;
+    color: #fff;
+    padding: 80px 20px;
+    overflow: hidden; /* Hide any overflowing stars */
+}
+
+.section_experience::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: none; /* Ensure stars don't interfere with content interaction */
+    z-index: 1;
+    background-image: 
+        radial-gradient(1px 1px at 10% 20%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 30% 40%, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 50% 60%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 70% 80%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 90% 10%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 80% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 60% 50%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 20% 70%, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 40% 90%, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 25% 50%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 55% 75%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 75% 20%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(1px 1px at 85% 40%, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 70%),
+        radial-gradient(2px 2px at 65% 60%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 70%);
+    animation: twinkle 4s infinite alternate;
+}
+
+@keyframes galaxyGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(1.2); }
+    100% { opacity: 0.8; transform: scale(1); }
+}
+
+/* About content layout */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* About text styling */
+.about-text {
+    flex: 1;
+    animation: fadeInLeft 1.5s ease;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-text, .about-image {
+        flex: unset;
+        width: 100%;
+    }
+}
+
+/* Section styling */
+.section_about {
+    padding: 80px 20px;
+    text-align: left;
+    -webkit-text-fill-color: white;
+}
+
+.section_skills {
+    padding: 80px 20px;
+    text-align: right;
+}
+
+.section_experience {
+    padding: 80px 20px;
+    text-align: left;
+}
+
+.container {
+    max-width: 1350px;
+    margin: 0 auto;
+}
+
+/* Button styling */
+.button {
+    display: inline-block;
+    background-color: #6c63ff;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #5a55ca;
+    transform: scale(1.1);
+}
+
+/* Footer styling */
+footer {
+    position: relative; /* Make the section a positioning context */
+    background: linear-gradient(-135deg, #1a1a40, #2a2a72, #3b3b8f, #472583, #7e1f7b);
+    background-size: 200% 200%;
+    animation: galaxyGradient 10s ease infinite;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0px;
+    overflow: hidden; /* Hide any overflowing stars */
+}
+
+@keyframes galaxyGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.full-screen .content {
+    animation: fadeIn 2s ease-in-out;
+}
