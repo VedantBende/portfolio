@@ -60,7 +60,7 @@ body.fade-out {
 
 /* Card hover effect to expand */
 .card:hover {
-    flex: 5;
+    flex: 6;
     width: 100%;
 }
 
@@ -108,7 +108,7 @@ body.fade-out {
 
 /* Center the text in the middle of the card */
 .card-content h3 {
-    font-size: 2em;
+    font-size: 1.78em;
     margin: 0;
 }
 
@@ -148,12 +148,46 @@ body.fade-out {
 }
 
 /* Responsive Styles */
+@media (max-width: 1024px) {
+    /* Adjust card layout for tablets and mobile devices */
+    .certificate {
+        flex-direction: column; /*Stack cards vertically on small screens */
+        width: 600px;
+        height: 850px;
+    }
+
+    .card {
+        height: 80%; /* Reduce height for smaller screens */
+    }
+
+    .card-content h3 {
+        font-size: 1.3em; /* Smaller title size */
+    }
+}
+
+@media (max-width: 820px) {
+    /* Adjust card layout for tablets and mobile devices */
+    .certificate {
+        flex-direction: column; /* Stack cards vertically on small screens */
+        width: 580px;
+        height: 800px;
+    }
+
+    .card {
+        height: 250px; /* Reduce height for smaller screens */
+    }
+
+    .card-content h3 {
+        font-size: 1.5em; /* Smaller title size */
+    }
+}
+
 @media (max-width: 768px) {
     /* Adjust card layout for tablets and mobile devices */
     .certificate {
         flex-direction: column; /* Stack cards vertically on small screens */
-        width: 400px;
-        height: 500px;
+        width: 380px;
+        height: 550px;
     }
 
     .card {
