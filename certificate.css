@@ -60,7 +60,7 @@ body.fade-out {
 
 /* Card hover effect to expand */
 .card:hover {
-    flex: 6;
+    flex: 7;
     width: 100%;
 }
 
